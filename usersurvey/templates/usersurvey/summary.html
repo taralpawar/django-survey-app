@@ -1,0 +1,72 @@
+{% extends 'baselayout.html' %}
+
+<!---->
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="text-center">Survey Summary</h1>
+</div>
+<div class="container">
+  {% if messages %} {% for message in messages %}
+  <div class="container">
+    <p class="alert alert-warning text-center">Survey deleted successfully !</p>
+  </div>
+  {% endfor %} {% endif %}
+  <div class="row">
+    <div class="col-4">
+      <h3>Overall Ratings</h3>
+      <hr />
+      <ul>
+        <li>
+          <div>
+            <h5>Food Quality</h5>
+            <p>{{foodpercent}} % Excellent</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h5>Service Quality</h5>
+            <p>{{servepercent}} % Excellent</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h5>Speed</h5>
+            <p>{{speedpercent}} % Excellent</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h5>Value</h5>
+            <p>{{valpercent}} % Excellent</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <h3>Individual Surveys</h3>
+      <ul class="list-group list-group-flush">
+        {% for survey in allsurvey %}
+        <li class="list-group-item">
+          <div>
+            <h5>{{survey.email}}</h5>
+            <p>{{survey.comment}}</p>
+            <ul>
+              <li>Food Quality : {{survey.foodquality}}</li>
+              <li>Service Quality : {{survey.servicequality}}</li>
+              <li>Speed : {{survey.speed}}</li>
+              <li>Value : {{survey.value}}</li>
+            </ul>
+          </div>
+          <br />
+          <a href="delete/{{survey.id}}/" class="btn btn-warning btn-sm inline"
+            >Delete</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

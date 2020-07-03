@@ -1,0 +1,214 @@
+{% extends 'baselayout.html' %}
+
+<!---->
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="text-center">Restaurant Survey</h1>
+  <p class="text-center">Please let us know how was the food and service.</p>
+</div>
+<div class="container">
+  <form method="POST" action="/">
+    {% csrf_token %}
+    <h5>Food Quality</h5>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="foodquality"
+        id="inlineRadio1"
+        value="Excellent"
+      />
+      <label class="form-check-label" for="inlineRadio1">Excellent</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="foodquality"
+        id="inlineRadio2"
+        value="Good"
+      />
+      <label class="form-check-label" for="inlineRadio2">Good</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="foodquality"
+        id="inlineRadio3"
+        value="Average"
+      />
+      <label class="form-check-label" for="inlineRadio3">Average</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="foodquality"
+        id="inlineRadio3"
+        value="Unsatisfied"
+      />
+      <label class="form-check-label" for="inlineRadio3">Unsatisfied</label>
+    </div>
+    <hr />
+    <h5>Service Quality</h5>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="servicequality"
+        id="inlineRadio1"
+        value="Excellent"
+      />
+      <label class="form-check-label" for="inlineRadio1">Excellent</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="servicequality"
+        id="inlineRadio2"
+        value="Good"
+      />
+      <label class="form-check-label" for="inlineRadio2">Good</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="servicequality"
+        id="inlineRadio3"
+        value="Average"
+      />
+      <label class="form-check-label" for="inlineRadio3">Average</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="servicequality"
+        id="inlineRadio3"
+        value="Unsatisfied"
+      />
+      <label class="form-check-label" for="inlineRadio3">Unsatisfied</label>
+    </div>
+    <hr />
+    <h5>Speed</h5>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="speed"
+        id="inlineRadio1"
+        value="Excellent"
+      />
+      <label class="form-check-label" for="inlineRadio1">Excellent</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="speed"
+        id="inlineRadio2"
+        value="Good"
+      />
+      <label class="form-check-label" for="inlineRadio2">Good</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="speed"
+        id="inlineRadio3"
+        value="Average"
+      />
+      <label class="form-check-label" for="inlineRadio3">Average</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="speed"
+        id="inlineRadio3"
+        value="Unsatisfied"
+      />
+      <label class="form-check-label" for="inlineRadio3">Unsatisfied</label>
+    </div>
+    <hr />
+    <h5>Value</h5>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="value"
+        id="inlineRadio1"
+        value="Excellent"
+      />
+      <label class="form-check-label" for="inlineRadio1">Excellent</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="value"
+        id="inlineRadio2"
+        value="Good"
+      />
+      <label class="form-check-label" for="inlineRadio2">Good</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="value"
+        id="inlineRadio3"
+        value="Average"
+      />
+      <label class="form-check-label" for="inlineRadio3">Average</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="value"
+        id="inlineRadio3"
+        value="Unsatisfied"
+      />
+      <label class="form-check-label" for="inlineRadio3">Unsatisfied</label>
+    </div>
+    <hr />
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1"
+        ><h5>Leave an overall comment</h5></label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+        name="comment"
+        required="required"
+      ></textarea>
+    </div>
+    <hr />
+    <div class="form-group">
+      <label for="exampleFormControlInput1"><h5>Email address</h5></label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="name@example.com"
+        name="email"
+        required="required"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br />
+    <br />
+  </form>
+</div>
+{% endblock %}
